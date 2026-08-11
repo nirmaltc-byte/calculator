@@ -1,0 +1,88 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Calculator container */
+.calculator {
+    width: 320px;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+/* Display */
+#data {
+    grid-column: span 4;
+    height: 60px;
+    box-sizing: border-box;
+
+    font-size: 28px;
+    text-align: right;
+    padding: 10px 15px;
+
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background-color: #eee;
+}
+
+/* Buttons */
+button {
+    height: 55px;
+    border: none;
+    border-radius: 10px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    background-color: #444;
+    color: white;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* Hover effect */
+button:hover {
+    background-color: #666;
+    transform: scale(1.05);
+}
+
+/* Click effect */
+button:active {
+    transform: scale(0.95);
+}
+
+/* Operator buttons */
+button[onclick*="displayNumber('+')"],
+button[onclick*="displayNumber('-')"],
+button[onclick*="displayNumber('*')"],
+button[onclick*="displayNumber('/')"] {
+    background-color: #f59e0b;
+}
+
+/* Equal button */
+button[onclick="calculate()"] {
+    background-color: #22c55e;
+}
+
+/* Clear button */
+button[onclick="clearText()"] {
+    background-color: #ef4444;
+}
+
+/* Backspace button */
+button[onclick="removeNumber()"] {
+    background-color: #64748b;
+}
